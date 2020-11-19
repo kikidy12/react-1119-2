@@ -1,0 +1,7 @@
+.Badge.red {
+    color: red;
+}
+
+.Badge.no-color {
+    text-decoration: underline;
+}
