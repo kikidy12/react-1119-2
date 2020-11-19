@@ -1,6 +1,6 @@
 import React from 'react'
 import Badge from './Badge';
-import './Badge.css';
+import './NameTag.css';
 
 
 // class NameTag extends React.Component {
@@ -21,37 +21,43 @@ import './Badge.css';
 function NameTag(props) {
 
     let color = props.color;
-    let tag = props.tag;
     let name = props.name;
+    let tag = props.tag;
     let type = props.type;
 
-    let color_stat = (<Badge color={color} />)
+    let color_stat = (
+        <Badge color={color} />
+    );
 
-    let output = ''
+    let output = "";
     switch (type) {
-        case 'inline':
+        case "inline":
         default:
-            output = '{color_stat} / {name} / {tag}'
-            break;
-        case 'breakall':
+            output = (
+                <p>{color_stat} / {name} / {tag}</p>
+            );
+        break;
+        case "breakall":
             output = (
                 <div>
                     <p>{color_stat}</p>
                     <p>{name}</p>
                     <p>{tag}</p>
                 </div>
-            )
-            break;
+            );
+        break;
+
+
     }
 
     let tag_app = (
-        <div className='NameTag'>
-            <img src='./logo192.png' />
+        <div className="NameTag">
+            <img src="./logo192.png" />
             {output}
         </div>
     )
 
-    return tag_app
+    return tag_app;
 }
 
 export default NameTag

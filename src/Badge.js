@@ -3,9 +3,16 @@ function Badge(props) {
 
     let color = props.color;
 
+    if (typeof(color) == "undefined")
+        return (
+            <span className="Badge no-color">
+                No Color
+            </span>
+        );
+
     return (
         <span className={`Badge ${color}`}>
-            {typeof(color) == 'undefined' ? 'no-color' : `color : ${color}`}
+            Color: {color}
         </span>
     )
 }
